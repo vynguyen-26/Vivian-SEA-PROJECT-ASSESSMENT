@@ -1,97 +1,53 @@
-/**
- * Data Catalog Project Starter Code - SEA Stage 2
- *
- * This file is where you should be doing most of your work. You should
- * also make changes to the HTML and CSS files, but we want you to prioritize
- * demonstrating your understanding of data structures, and you'll do that
- * with the JavaScript code you write in this file.
- *
- * The comments in this file are only to help you learn how the starter code
- * works. The instructions for the project are in the README. That said, here
- * are the three things you should do first to learn about the starter code:
- * - 1 - Change something small in index.html or style.css, then reload your
- *    browser and make sure you can see that change.
- * - 2 - On your browser, right click anywhere on the page and select
- *    "Inspect" to open the browser developer tools. Then, go to the "console"
- *    tab in the new window that opened up. This console is where you will see
- *    JavaScript errors and logs, which is extremely helpful for debugging.
- *    (These instructions assume you're using Chrome, opening developer tools
- *    may be different on other browsers. We suggest using Chrome.)
- * - 3 - Add another string to the titles array a few lines down. Reload your
- *    browser and observe what happens. You should see a fourth "card" appear
- *    with the string you added to the array, but a broken image.
- *
- */
+import Diary from "./models/Diary.js";
 
-const FRESH_PRINCE_URL =
-  "https://upload.wikimedia.org/wikipedia/en/3/33/Fresh_Prince_S1_DVD.jpg";
-const CURB_POSTER_URL =
-  "https://m.media-amazon.com/images/M/MV5BZDY1ZGM4OGItMWMyNS00MDAyLWE2Y2MtZTFhMTU0MGI5ZDFlXkEyXkFqcGdeQXVyMDc5ODIzMw@@._V1_FMjpg_UX1000_.jpg";
-const EAST_LOS_HIGH_POSTER_URL =
-  "https://static.wikia.nocookie.net/hulu/images/6/64/East_Los_High.jpg";
+// List of diaries objects
+const diaries = [
+  new Diary("My first Christmas Holiday Market in New York at Bryant Park, so festive and fun.", ["Holiday-Market.jpeg"], 1),
+  new Diary("Seeing the famous Rockefeller Center Chirstmas Tree, such a wonderful experience.", ["RockeFeller-Chirstmas-Tree.jpeg"], 1),
+  new Diary("Finally has a chance to try Lady M cake again, so yummy!!! Green Tea has always been my favorite.", ["Lady-M.jpeg"], 1),
+  new Diary("St. Patrick's Cathedral is the most beautiful church I have ever visited.", ["Cathedral.jpeg"], 1),
+  new Diary("Of course I have to go see the Statue of Liberty.", ["Liberty.jpeg"], 1),
+  new Diary("There is now way I'm missing this viral bridge checking spot. We were lost trying to find it, but so worth it!", ["Manhattan-Bridge.jpeg"], 1),
+  new Diary("Salswee has all the cutes desserts. At the time, I really couldn't bring myself to eat them but they were truly delicious.", ["Salswee.jpeg"], 1),
+  new Diary("Look who has been captured by my camera while I was on the Liberty Island.", ["Seagull.jpeg"], 1),
+  new Diary("Taken this amazing view from Nubeluz's balcony.", ["Night.jpeg"], 1),
 
-// This is an array of strings (TV show titles)
-let titles = [
-  "Fresh Prince of Bel Air",
-  "Curb Your Enthusiasm",
-  "East Los High",
-];
-// Your final submission should have much more data than this, and
-// you should use more than just an array of strings to store it all.
+  new Diary("The view of the city from the top of the Umeda Sky Observation is breathtaking. It's so cold windy up there causing my hair a mess but the view pays off.", ["Umeda-Sky-Observation.jpeg"], 2),
+  new Diary("The Osaka Castle is so beautiful, I wish I could have more time to explore Osaka Castle Park.", ["Castle.jpeg"], 2),
+  new Diary("Chureito Pagoda is a famous temple that tourist can see Mount Fuji from there, but when I went it was too cloudy so I couldn't see it. Somehow, the snow made it so much better.", ["Chureito-Pagoda.jpeg"], 2),
+  new Diary("Hokan Ji temple really bring out Japan's culture. Also, I dress up in Kimino trying to be a Japanese girl to take pictures here.", ["Hokan-Ji.jpeg"], 2),
+  new Diary("It was a lot working to get up to Kiyosumi Temple in Geta (traditional Japanese flip-flops). But at least I got see some of the cherry blossoms.", ["Kiyosumi.jpeg"], 2),
+  new Diary("Finally got the chance to try authentic matcha. It's a little stronger than I expected but overall pretty good.", ["Maccha-House.jpeg"], 2),
+  new Diary("I heard that Oishi Part in Kawaguchiko is one of the most beautiful places to see Mount Fuji. But it was so cloudy when I went so I can barely see the top of the moutain.", ["Oishi-Park.jpeg"], 2),
+  new Diary("Eating these warabi mochi along with sugar syrup is so good!!! ", ["Mochi.jpeg"], 2),
 
-// This function adds cards the page to display the data in the array
-function showCards() {
-  const cardContainer = document.getElementById("card-container");
-  cardContainer.innerHTML = "";
-  const templateCard = document.querySelector(".card");
+  new Diary("Captured beutiful sunset at HarborWalk Village in Destin.", ["HarborWalk-Village.jpeg"], 3),
+  new Diary("Made my own seashell jar and took an aesthetic photo at our new discover beach.", ["James-Lee-Beach.jpeg"], 3),
+  new Diary("My first time taking a photo with my film camera at Rosemary Beach.", ["Rosemary-Beach1.jpeg"], 3),
+  new Diary("Another beautiful moment at Rosemary Beach.", ["Rosemary-Beach2.jpeg"], 3),
+  new Diary("Somehow we discovered a hidden gem at The Jetties.", ["The-Jetties.jpeg"], 3),
+  new Diary("One of my favorite photos from the trip.", ["Waves.jpeg"], 3),
 
-  for (let i = 0; i < titles.length; i++) {
-    let title = titles[i];
+  new Diary("Gotta chek in that this famous spot at Nham Coffee.", ["Book-Cafe.jpeg"], 4),
+  new Diary("I felt like he's judging me.", ["Cat.jpeg"], 4),
+  new Diary("I'm in love with Crab Spaghetti at Pizza 4P's. Literally getting this every time I go to Vietnam.", ["Crab-Spaghetti.jpeg"], 4),
+  new Diary("I loved everything about this place from the food to decoration. The name \"I Hate Monday\" is somehow related to everyone.", ["Hate-Monday.jpeg"], 4),
+  new Diary("One of the most beautiful homestays I've ever stayed at.", ["Homestay.jpeg"], 4),
+  new Diary("Cute coffee shop at Phan Thiet.", ["Phan-Thiet.jpeg"], 4),
+  new Diary("Seeing Italian Architecture in Sunset Town in Phu Quoc. This place still looks unreal to me.", ["Phu-Quoc.jpeg"], 4),
+  new Diary("Found a hidden gem to see sunrise in Vung Tau.", ["Sunrise.jpeg"], 4),
+  new Diary("This picture is taken from my a beach in my grandmother's hometown. My first time there and it was really beautiful.", ["Sunrisew.jpeg"], 4),
+  new Diary("A hidden gem to look at Sai Gon from a more peaceful view. I did enjoy the view along with my strawberry tea.", ["Sunset.jpeg"], 4),
+  new Diary("Beautiful sunset at Dinh Cau, Phu Quoc.", ["Sunset2.jpeg"], 4),
 
-    // This part of the code doesn't scale very well! After you add your
-    // own data, you'll need to do something totally different here.
-    let imageURL = "";
-    if (i == 0) {
-      imageURL = FRESH_PRINCE_URL;
-    } else if (i == 1) {
-      imageURL = CURB_POSTER_URL;
-    } else if (i == 2) {
-      imageURL = EAST_LOS_HIGH_POSTER_URL;
-    }
-
-    const nextCard = templateCard.cloneNode(true); // Copy the template card
-    editCardContent(nextCard, title, imageURL); // Edit title and image
-    cardContainer.appendChild(nextCard); // Add new card to the container
-  }
-}
-
-function editCardContent(card, newTitle, newImageURL) {
-  card.style.display = "block";
-
-  const cardHeader = card.querySelector("h2");
-  cardHeader.textContent = newTitle;
-
-  const cardImage = card.querySelector("img");
-  cardImage.src = newImageURL;
-  cardImage.alt = newTitle + " Poster";
-
-  // You can use console.log to help you debug!
-  // View the output by right clicking on your website,
-  // select "Inspect", then click on the "Console" tab
-  console.log("new card:", newTitle, "- html: ", card);
-}
-
-// This calls the addCards() function when the page is first loaded
-document.addEventListener("DOMContentLoaded", showCards);
-
-function quoteAlert() {
-  console.log("Button Clicked!");
-  alert(
-    "I guess I can kiss heaven goodbye, because it got to be a sin to look this good!",
-  );
-}
-
-function removeLastCard() {
-  titles.pop(); // Remove last item in titles array
-  showCards(); // Call showCards again to refresh
-}
+  new Diary("Famous checking spot at the Battery with Atlanta Braves. I love this film effect on Dazzcam.", ["ATL-Braves.jpeg"], 5),
+  new Diary("Stoping at a random spot in Blairsville and took this.", ["Blairsville.jpeg"], 5),
+  new Diary("Another spot that we found in Blairsville. We had the most fun taking pictures and recording videos here for a little bit.", ["Blairsville2.jpeg"], 5),
+  new Diary("Jackson Street Bridge - Famous bridge check in spot in Atlanta", ["Bridge.jpeg"], 5),
+  new Diary("Stick toffee cake at Fudo - My favorite dessert at all times. .", ["Brownies.jpeg"], 5),
+  new Diary("New opening coffee shop. I love this corner, it's looks so aesthetic!", ["Cafe-Soon.jpeg"], 5),
+  new Diary("Georgia Tech's sunset on a random Friday.", ["GT-Sunset.jpeg"], 5),
+  new Diary("One of my favorite parks in Georgia. I want to camp here one day.", ["Park.jpeg"], 5),
+  new Diary("Just a scence that I like when driving in Downtown Atlanta at night", ["SkyView.jpeg"], 5),
+  new Diary("Just a cute spot at St.Cecilia. My sister had her birthday here.", ["St-Cecilia.jpeg"], 5),
+]
