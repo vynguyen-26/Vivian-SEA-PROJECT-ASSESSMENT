@@ -508,6 +508,9 @@ const diaries = [
   },
 ];
 
+const diaryQuizStatus = {};
+let currentFilter = "All";
+
 // get saved note in diary from localStorage allow new edit note to be store
 diaries.forEach((diary) => {
   const savedNote = localStorage.getItem(`memory-note-${diary.id}`);
@@ -523,6 +526,8 @@ function createDiaryCard(title, tag, id) {
   card.dataset.id = id;
 
   let tagClass = "";
+  let statusMarkup = "";
+  const quizStatus = diaryQuizStatus[id];
 
   if (tag === "Travel") {
     tagClass = "travel-tag";
@@ -532,7 +537,15 @@ function createDiaryCard(title, tag, id) {
     tagClass = "family-tag";
   }
 
+  if (quizStatus === "completed") {
+    statusMarkup = `<span class="card-status-badge completed-badge">Completed</span>`;
+  } else if (quizStatus === "retry") {
+    statusMarkup = `<span class="card-status-badge retry-badge">Retry</span>`;
+  }
+
+  // no badge for the card before attempt the quiz
   card.innerHTML = `
+    ${statusMarkup}
     <div class="card-content">
       <h3 class="diary-card-title">${title}</h3>
       <span class="diary-card-tag ${tagClass}">${tag}</span>
@@ -573,8 +586,8 @@ filterButtons.forEach(button => {
     filterButtons.forEach(btn => btn.classList.remove("active"));
     button.classList.add("active");
 
-    const selectedTag = button.dataset.filter;
-    const filteredDiaries = filterDiaries(selectedTag);
+    currentFilter = button.dataset.filter;
+    const filteredDiaries = filterDiaries(currentFilter);
     renderDiaryList(filteredDiaries);
   });
 });
@@ -600,6 +613,8 @@ function openDiaryDetail(diaryId) {
 function renderDiaryDetail(diary) {
   let headerClass = "";
   let tagClass = "";
+  const quizStatus = diaryQuizStatus[diary.id];
+  const isCompleted = quizStatus === "completed";
 
   if (diary.tag === "Travel") {
     headerClass = "travel-header";
@@ -611,27 +626,47 @@ function renderDiaryDetail(diary) {
     headerClass = "family-header";
     tagClass = "family-tag";
   }
-  
+
+  const detailStatusMarkup = isCompleted 
+    ? `<span class="detail-status-badge completed-badge">Completed</span>`
+    : quizStatus === "retry"
+      ? `<span class="detail-status-badge retry-badge">Retry</span>`
+      : "";
+
+  const retryMessage = quizStatus === "retry"
+    ? `<p class="retry-message">You did not unlock this memory yet. Try the quiz again.</p>`
+    : "";
+
+  const quizMarkup = isCompleted
+    ? ""
+    : `
+      <div id="quiz-wrapper">
+        <div class="unlock-message">
+          <h3> 🔒 Unlock Your Memory </h3>
+          <p> Answer these questions correctly to reveal your note.! </p> 
+        </div>
+
+        ${retryMessage}
+
+        <div id="quiz-container"></div>
+      </div>
+    `;
+
   memoryDetail.innerHTML = `
     <div class="memory-detail-container">
       <div class="memory-detail-header ${headerClass}">
         <div>
           <h2 class="memory-detail-title">${diary.title}</h2>
-          <span class="memory-detail-tag">${diary.tag}</span>
+          <span class="memory-detail-tag ${tagClass}">${diary.tag}</span>
+          ${detailStatusMarkup}
         </div>
         <button id="close-detail-button" class="close-button" type="button">X</button>
       </div>
 
       <div class="memory-title-image-container">
         <img src="${diary.image}" alt="${diary.title}" class="memory-detail-image"/>
-
-        <div id="quiz-wrapper">
-          <div class="unlock-message">
-            <h3> 🔒 Unlock Your Memory </h3>
-            <p> Answer these questions correctly to reveal your note.! </p>       
-          </div>
-          <div id="quiz-container"></div>
-        </div> 
+        
+        ${quizMarkup}
         
         <div id="note-container"></div>
       </div>
@@ -646,7 +681,11 @@ function renderDiaryDetail(diary) {
   });
 
   // call quiz questions for that specific card
-  startQuiz(diary);
+  if (isCompleted) {
+    renderUnlockedNote(diary);
+  } else {
+    startQuiz(diary);
+  }
 }
 
 // render the quiz for a specific diary entry with its questions and options, and show feedback for correct or wrong answers
@@ -746,7 +785,12 @@ function startQuiz(diary) {
 
     // unlock note if all questions are answers correctly
     if (score === total) {
+      diaryQuizStatus[diary.id] = "completed";
+      renderDiaryList(filterDiaries(currentFilter));
       renderUnlockedNote(diary);
+    } else {
+      diaryQuizStatus[diary.id] = "retry";
+      renderDiaryList(filterDiaries(currentFilter));
     }
   }
 
