@@ -1,4 +1,6 @@
-// List of diaries objects
+// An array of diaries entries with each diary is an object
+// Each diary object contains id, title, tag, image, note, and an array of question objects
+// Each question object contains question, an array of options, and a correct answer
 const diaries = [
   {
     id: "japan-trip-1",
@@ -506,7 +508,7 @@ const diaries = [
   },
 ];
 
-
+// get saved note in diary from localStorage allow new edit note to be store
 diaries.forEach((diary) => {
   const savedNote = localStorage.getItem(`memory-note-${diary.id}`);
   if (savedNote !== null) {
@@ -514,7 +516,7 @@ diaries.forEach((diary) => {
   }
 })
 
-// create a card for each diary entry with title and tag and add it to the diary container in home page
+// create a diary card for each diary entry with title and tag for home page
 function createDiaryCard(title, tag, id) {
   const card = document.createElement("div");
   card.className = "diary-card";
@@ -547,7 +549,7 @@ function createDiaryCard(title, tag, id) {
 const diaryContainer = document.getElementById("diary-container");
 const filterButtons = document.querySelectorAll("[data-filter]");
 
-// Render the list of diaries in the diary container
+// Render the list of current diary cards in the diary container
 function renderDiaryList(diaryList){
   diaryContainer.innerHTML = "";
   
@@ -565,7 +567,7 @@ function filterDiaries(tag) {
   return diaries.filter(diary => diary.tag === tag);
 }
 
-// filter the diary list by its tag when a button is clicked
+// update the active filter button and render the card list when a filter is selected
 filterButtons.forEach(button => {
   button.addEventListener("click", () => {
     filterButtons.forEach(btn => btn.classList.remove("active"));
@@ -583,7 +585,7 @@ const detailView = document.getElementById("detail-view");
 const memoryDetail = document.getElementById("memory-detail");
 const backButton = document.getElementById("back-button");
 
-// open the detail view for a specific diary entry when its card is clicked
+// open the detail view for a specific diary selected
 function openDiaryDetail(diaryId) {
   const selectedDiary = diaries.find(d => d.id === diaryId);
   if (!selectedDiary) {
@@ -633,7 +635,7 @@ function renderDiaryDetail(diary) {
         <div id="quiz-wrapper">
           <div class="unlock-message">
             <h3> 🔒 Unlock Your Memory </h3>
-            <p> Answer these questions to reveal your note! </p>       
+            <p> Answer these questions correctly to reveal your note.! </p>       
           </div>
           <div id="quiz-container"></div>
         </div> 
@@ -643,12 +645,14 @@ function renderDiaryDetail(diary) {
     </div>
   `;
 
+  // close button to return to homepage
   document.getElementById("close-detail-button").addEventListener("click", () => {
     detailView.classList.add("hidden");
     homeView.classList.remove("hidden");
     memoryDetail.innerHTML = "";
   });
 
+  // call quiz questions for that specific card
   startQuiz(diary);
 }
 
@@ -702,6 +706,7 @@ function startQuiz(diary) {
 
     selectedOption = selectedIndex;
     isCorrect = chosenOption === currentQuestion.answer;
+    // keep track the total of correct answer
     if (isCorrect) {
       answeredCorrectly++;
     }
@@ -713,6 +718,7 @@ function startQuiz(diary) {
     optionButtons.forEach((button, index) => {
       button.disabled = true;
 
+      // compare if the selected answer is correct or not to render feedback
       if (button.textContent === currentQuestion.answer) {
         button.classList.add("correct");
       } else if (index === selectedIndex && !isCorrect) {
@@ -745,6 +751,7 @@ function startQuiz(diary) {
       </div>
     `;
 
+    // unlock note if all questions are answers correctly
     if (score === total) {
       renderUnlockedNote(diary);
     }
@@ -753,10 +760,12 @@ function startQuiz(diary) {
   renderQuestion();
 }
 
+// Render unlock note and allow user to toggle between reading and editing
 function renderUnlockedNote(diary) {
   const noteContainer = document.getElementById("note-container");
   let isEditing = false;
 
+  // Re-render note card each time user switch between save and edit mode
   function renderNote(){
     noteContainer.innerHTML = `
       <div class="note-card">
@@ -780,6 +789,7 @@ function renderUnlockedNote(diary) {
 
     const toggleButton = document.getElementById("toggle-note-button");
 
+    // mofify data - save note changes for each diary
     toggleButton.addEventListener("click", () => {
       if (isEditing) {
         const noteInput = document.getElementById("note-input");
@@ -795,4 +805,5 @@ function renderUnlockedNote(diary) {
   renderNote();
 }
 
+// initial page load shows all the diary cards in homepage
 renderDiaryList(diaries);

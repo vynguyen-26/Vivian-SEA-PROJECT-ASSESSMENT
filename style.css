@@ -369,7 +369,7 @@ body {
   font-size: 1.5rem;
 }
 
-.quiz-option.corect {
+.quiz-option.correct {
   border-color: #22c55e;
   background-color: #f0fdf4;
 }
