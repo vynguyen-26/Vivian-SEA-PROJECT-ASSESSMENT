@@ -1,31 +1,61 @@
 <!doctype html>
 <html>
   <head>
-    <title>LA TV Shows | Home</title>
-    <meta name="description" content="A Catalog of Shows Set in Los Angeles" />
+    <title>Memory Quiz | Home</title>
+    <meta name="description" content="A Catalog of Memories" />
     <link rel="stylesheet" href="style.css" />
-    <script type="text/javascript" src="scripts.js"></script>
+    <script type="module" src="scripts.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
   </head>
 
   <body>
-    <header class="main-header">
-      <h1 class="title">LA TV Shows</h1>
+    <header class="title-header">
+      <h1 class="title">.✦ ݁My Memory Diary  ݁✦.</h1>
+      <p>Behind a hidden riddle is a precious memory</p>
     </header>
-    <div id="card-container"></div>
-    <div class="card" style="display: none">
-      <div class="card-content">
-        <h2>TV Show Title</h2>
-        <img src="" alt="TV Show Poster" />
-        <ul>
-          <li>Bullet Point 1</li>
-          <li>Bullet Point 2</li>
-          <li>Bullet Point 3</li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer">
-      <button onclick="quoteAlert()">Get A Quote!</button>
-      <button onclick="removeLastCard()">Remove A Card!</button>
-    </div>
+    
+    <!-- Main content area with filter and diary sections -->
+    <main class="main-content">
+      <!-- // Home view with filter options and diary card list -->
+      <section id="home-view">
+        <section class="filter-section" aria-label="Diary filters">
+          <h2>Filter Memories ˙✧˖°📷 ༘ ⋆｡˚</h2>
+          <div class="filter-buttons">
+            <button class="filter-button all-filter" data-filter="All">
+              <img src="assets/all.png" alt="All icon" class="filter-icon"/>
+              <span class="filter-label">All</span>
+            </button>
+            
+            <button class="filter-button travel-filter" data-filter="Travel">
+              <img src="assets/travel.png" alt="Travel icon" class="filter-icon"/>
+              <span class="filter-label">Travel</span>
+            </button>
+            
+            <button class="filter-button event-filter" data-filter="Event">
+              <img src="assets/event.png" alt="Event icon" class="filter-icon"/>
+              <span class="filter-label">Event</span>
+            </button>
+            
+            <button class="filter-button family-filter" data-filter="Family">
+              <img src="assets/family.png" alt="Family icon" class="filter-icon"/>
+              <span class="filter-label">Family</span>
+            </button>
+          </div>
+        </section>
+        
+        <!-- // Container for diary entries that will be dynamically populated -->
+        <section class="diary-section" aria-label="Diary entries">
+          <div id="diary-container"></div>
+        </section>
+      </section>
+      
+      <!-- // Detail view for individual memory card that is hidden by default and shown when a card is clicked -->
+      <section id="detail-view" class="hidden">
+        <button id="back-button"></button>
+        <div id="memory-detail"></div>
+      </section>
+    </main>
   </body>
 </html>
