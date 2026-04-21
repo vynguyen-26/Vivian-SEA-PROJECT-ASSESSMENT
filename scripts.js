@@ -583,7 +583,6 @@ filterButtons.forEach(button => {
 const homeView = document.getElementById("home-view");
 const detailView = document.getElementById("detail-view");
 const memoryDetail = document.getElementById("memory-detail");
-const backButton = document.getElementById("back-button");
 
 // open the detail view for a specific diary selected
 function openDiaryDetail(diaryId) {
@@ -596,12 +595,6 @@ function openDiaryDetail(diaryId) {
   detailView.classList.remove("hidden");
   renderDiaryDetail(selectedDiary);
 }
-
-// add click event listener to the back button to return to the home view
-backButton.addEventListener("click", () => {
-  detailView.classList.add("hidden");
-  homeView.classList.remove("hidden");
-});
 
 // render the detail view for a specific diary entry with its title, tag, image, note, and quiz questions
 function renderDiaryDetail(diary) {
