@@ -25,6 +25,102 @@ const diaries = [
     ]
   },
   {
+    id: "emma-birthday",
+    title: "Childhood's friends",
+    tag: "Family",
+    image: "/images/birthday/emma-birthday.jpeg",
+    note: "Emma finally had her first birthday celebration with her friends in first grade. The kids had so much fun, and Emma was so happy opening the presents.",
+    questions: [
+      {
+        question: "Who birthday is this?",
+        options: ["John", "Peter", "Emma"],
+        answer: "Emma" 
+      },
+      {
+        question: "Where is Emma in the picture?",
+        options: ["Left", "Middle", "Right"],
+        answer: "Left" 
+      },
+      {
+        question: "What is she wearing?",
+        options: ["Blue jacket with short", "White shirt and pink skirt", "Pink cargo shirt and jeans"],
+        answer: "Pink cargo shirt and jeans" 
+      }
+    ]
+  },
+  {
+    id: "graduation",
+    title: "Welcome to adulthood",
+    tag: "Event",
+    image: "/images/graduation/graduation.jpeg",
+    note: "Celebrated my daughter's graduation from college.",
+    questions: [
+      {
+        question: "What is this event?",
+        options: ["Birthday", "Wedding", "Graduation"],
+        answer: "Graduation"
+      },
+      {
+        question: "Who is graduating?",
+        options: ["My Niece", "Youngest Daughter", "Son"],
+        answer: "Youngest Daughter"
+      },
+      {
+        question: "What year did this event take place?",
+        options: ["2017", "2020", "2025"],
+        answer: "2020"
+      },
+    ]
+  },
+  {
+    id: "son-family",
+    title: "Family Bonding",
+    tag: "Family",
+    image: "/images/family/son-family.webp",
+    note: "Spent quality time with my son and his family. It was a heartwarming experience filled with love and laughter.",
+    questions: [
+      {
+        question: "Who is in this photo?",
+        options: ["My Son and his Family", "My Daughter and her Family", "My Grandson"],
+        answer: "My Son and his Family"
+      },
+      {
+        question: "What  are their names?",
+        options: ["John, Mary, Alice, and Tom", "David, Sarah, Hector ,and Emily", "Michael, Lisa, David,and Jack"],
+        answer: "Michael, Lisa, David,and Jack"
+      },
+      {
+        question: "How old was my grandson and granddaughter in this photo?",
+        options: ["3 years old and 5 years old", "7 years old and 2 years old", "5 years old and 1 year old"],
+        answer: "7 years old and 2 years old"
+      }
+    ]
+  },
+  {
+    id: "tet",
+    title: "Red Envelopes",
+    tag: "Event",
+    image: "/images/vietnam/Tet-holiday.jpg",
+    note: "Celebrated Lunar New Year, the Vietnamese New Year, with my family in Vietnam. The kids had a lot of fun and excitement to receive red envelopes.",
+    questions: [
+      {
+        question: "What is this event?",
+        options: ["Christmas", "Lunar New Year", "Small gathering"],
+        answer: "Lunar New Year"
+      },
+      {
+        question: "What year did this event take place?",
+        options: ["2020", "2022", "2023"],
+        answer: "2020"
+      },
+      {
+        question: "Who was there?",
+        options: ["Family", "Friends", "Colleagues"],
+        answer: "Family"
+      }
+    ]
+  },
+  {
     id: "atlanta",
     title: "Baseball's Soul",
     tag: "Travel",
@@ -73,6 +169,30 @@ const diaries = [
     ]
   },
   {
+    id: "first-born",
+    title: "Look who's here",
+    tag: "Family",
+    image: "/images/family/first-born.jpeg",
+    note: "Our first child was born and we couldn't be more excited. The joy and love we feel is indescribable.",
+    questions: [
+      {
+        question: "What is this photo of?",
+        options: ["A newborn baby", "A toddler", "A teenager"],
+        answer: "A newborn baby"
+      },
+      {
+        question: "How old is the baby?",
+        options: ["0 months old", "6 months old", "1 year old"],
+        answer: "0 months old"
+      },
+      {
+        question: "What is the baby's name?",
+        options: ["Emma", "Liam", "Olivia"],
+        answer: "Emma"
+      }
+    ]
+  },
+  {
     id: "canada-trip-1",
     title: "The North",
     tag: "Travel",
@@ -98,7 +218,7 @@ const diaries = [
   },
   {
     id: "destin-trip-1",
-    title: "Beach Vibes",
+    title: "Salty Taste",
     tag: "Travel",
     image: "/images/destin/Rosemary-Beach1.jpeg",
     note: "Enjoyed the beautiful beaches of Destin, Florida.",
@@ -145,30 +265,6 @@ const diaries = [
     ]
   },
   {
-    id: "graduation",
-    title: "Welcome to adulthood",
-    tag: "Event",
-    image: "/images/graduation/graduation.jpeg",
-    note: "Celebrated my daughter's graduation from college.",
-    questions: [
-      {
-        question: "What is this event?",
-        options: ["Birthday", "Wedding", "Graduation"],
-        answer: "Graduation"
-      },
-      {
-        question: "Who is graduating?",
-        options: ["My Niece", "Youngest Daughter", "Son"],
-        answer: "Youngest Daughter"
-      },
-      {
-        question: "What year did this event take place?",
-        options: ["2017", "2020", "2025"],
-        answer: "2020"
-      },
-    ]
-  },
-  {
     id: "birthday",
     title: "Another Year Older",
     tag: "Event",
@@ -193,26 +289,26 @@ const diaries = [
     ]
   },
   {
-    id: "christmas",
-    title: "Holiday Cheer",
-    tag: "Event",
-    image: "/images/christmas/christmas.jpg",
-    note: "Celebrated Christmas with family. It was a magical day filled with joy and togetherness.",
+    id: "puppy",
+    title: "Little Ones",
+    tag: "Family",
+    image: "/images/family/puppy.jpeg",
+    note: "Buddy gets to go outside to hang out with our family and his friends. He is a playful and adorable puppy who brings joy to our lives.",
     questions: [
       {
-        question: "What is this event?",
-        options: ["Christmas", "New Year", "Thanksgiving"],
-        answer: "Christmas"
+        question: "What is this photo of?",
+        options: ["A puppy", "A kitten", "A bird"],
+        answer: "A puppy"
       },
       {
-        question: "What year did this event take place?",
-        options: ["2020", "2022", "2023"],
-        answer: "2020"
+        question: "How old is the puppy?",
+        options: ["2 months old", "6 months old", "1 year old"],
+        answer: "1 year old"
       },
       {
-        question: "Who was there?",
-        options: ["Family", "Friends", "Colleagues"],
-        answer: "Family"
+        question: "What is the puppy's name?",
+        options: ["Buddy", "Max", "Charlie"],
+        answer: "Buddy"
       }
     ]
   },
@@ -241,21 +337,21 @@ const diaries = [
     ]
   },
   {
-    id: "tet",
-    title: "Red Envelopes",
-    tag: "Event",
-    image: "/images/vietnam/Tet-holiday.jpg",
-    note: "Celebrated Lunar New Year, the Vietnamese New Year, with my family in Vietnam. The kids had a lot of fun and excitement to receive red envelopes.",
+    id: "grandpa-birthday",
+    title: "About to enter Relax Era",
+    tag: "Family",
+    image: "/images/birthday/grandpa-birthday.jpeg",
+    note: "Grandpa's 67th birthday!!! The family get to be together for the weekend and we had so much fun. We are happy that he's still healthy and full of energy.",
     questions: [
       {
         question: "What is this event?",
-        options: ["Christmas", "Lunar New Year", "Small gathering"],
-        answer: "Lunar New Year"
+        options: ["Birthday", "New Year", "Thanksgiving"],
+        answer: "Birthday"
       },
       {
         question: "What year did this event take place?",
-        options: ["2020", "2022", "2023"],
-        answer: "2020"
+        options: ["2060", "2050", "2053"],
+        answer: "2050"
       },
       {
         question: "Who was there?",
@@ -337,6 +433,30 @@ const diaries = [
     ]
   },
   {
+    id: "christmas",
+    title: "Holiday Cheer",
+    tag: "Event",
+    image: "/images/christmas/christmas.jpg",
+    note: "Celebrated Christmas with family. It was a magical day filled with joy and togetherness.",
+    questions: [
+      {
+        question: "What is this event?",
+        options: ["Christmas", "New Year", "Thanksgiving"],
+        answer: "Christmas"
+      },
+      {
+        question: "What year did this event take place?",
+        options: ["2020", "2022", "2023"],
+        answer: "2020"
+      },
+      {
+        question: "Who was there?",
+        options: ["Family", "Friends", "Colleagues"],
+        answer: "Family"
+      }
+    ]
+  },
+  {
     id: "paris",
     title: "City of Love",
     tag: "Travel",
@@ -384,78 +504,6 @@ const diaries = [
       }
     ] 
   },
-  {
-    id: "son-family",
-    title: "Family Bonding",
-    tag: "Family",
-    image: "/images/family/son-family.webp",
-    note: "Spent quality time with my son and his family. It was a heartwarming experience filled with love and laughter.",
-    questions: [
-      {
-        question: "Who is in this photo?",
-        options: ["My Son and his Family", "My Daughter and her Family", "My Grandson"],
-        answer: "My Son and his Family"
-      },
-      {
-        question: "What  are their names?",
-        options: ["John, Mary, Alice, and Tom", "David, Sarah, Hector ,and Emily", "Michael, Lisa, David,and Jack"],
-        answer: "Michael, Lisa, David,and Jack"
-      },
-      {
-        question: "How old was my grandson and granddaughter in this photo?",
-        options: ["3 years old and 5 years old", "7 years old and 2 years old", "5 years old and 1 year old"],
-        answer: "7 years old and 2 years old"
-      }
-    ]
-  },
-  {
-    id: "puppy",
-    title: "Little Ones",
-    tag: "Family",
-    image: "/images/family/puppy.jpeg",
-    note: "Buddy gets to go outside to hang out with our family and his friends. He is a playful and adorable puppy who brings joy to our lives.",
-    questions: [
-      {
-        question: "What is this photo of?",
-        options: ["A puppy", "A kitten", "A bird"],
-        answer: "A puppy"
-      },
-      {
-        question: "How old is the puppy?",
-        options: ["2 months old", "6 months old", "1 year old"],
-        answer: "1 year old"
-      },
-      {
-        question: "What is the puppy's name?",
-        options: ["Buddy", "Max", "Charlie"],
-        answer: "Buddy"
-      }
-    ]
-  },
-  {
-    id: "first-born",
-    title: "Look who's here",
-    tag: "Family",
-    image: "/images/family/first-born.jpeg",
-    note: "Our first child was born and we couldn't be more excited. The joy and love we feel is indescribable.",
-    questions: [
-      {
-        question: "What is this photo of?",
-        options: ["A newborn baby", "A toddler", "A teenager"],
-        answer: "A newborn baby"
-      },
-      {
-        question: "How old is the baby?",
-        options: ["0 months old", "6 months old", "1 year old"],
-        answer: "0 months old"
-      },
-      {
-        question: "What is the baby's name?",
-        options: ["Emma", "Liam", "Olivia"],
-        answer: "Emma"
-      }
-    ]
-  }
 ];
 
 
