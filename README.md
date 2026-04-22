@@ -31,7 +31,8 @@ This project was created as a part of the Snap Engineering Academy Stage 2 and w
 2. Open `index.html` in any modern web browser (Chrome recommended).
 3. Explore the catalog and enjoy the hunt for Hidden Mickeys!
 
-Or, visit the **live GitHub Pages version** here:  
+Or, visit the **live GitHub Pages version** here:
+https://vynguyen-26.github.io/Vivian-SEA-PROJECT-ASSESSMENT/  
 
 ---
 ## 📚 Data Structure 
