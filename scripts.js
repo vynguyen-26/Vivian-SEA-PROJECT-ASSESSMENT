@@ -6,7 +6,7 @@ const diaries = [
     id: "japan-trip-1",
     title: "Sushi Trip",
     tag: "Travel",
-    image: "/images/japan/Oishi-Park.jpeg",
+    image: "images/japan/Oishi-Park.jpeg",
     note: "Had a great time visiting Oishi Park in Japan. Although the weather was a bit cloudy, the view of Mount Fuji was breathtaking!",
     questions: [
       {
@@ -30,7 +30,7 @@ const diaries = [
     id: "emma-birthday",
     title: "Childhood's friends",
     tag: "Family",
-    image: "/images/birthday/emma-birthday.jpeg",
+    image: "images/birthday/emma-birthday.jpeg",
     note: "Emma finally had her first birthday celebration with her friends in first grade. The kids had so much fun, and Emma was so happy opening the presents.",
     questions: [
       {
@@ -54,7 +54,7 @@ const diaries = [
     id: "graduation",
     title: "Welcome to adulthood",
     tag: "Event",
-    image: "/images/graduation/graduation.jpeg",
+    image: "images/graduation/graduation.jpeg",
     note: "Celebrated my daughter's graduation from college.",
     questions: [
       {
@@ -78,7 +78,7 @@ const diaries = [
     id: "son-family",
     title: "Family Bonding",
     tag: "Family",
-    image: "/images/family/son-family.webp",
+    image: "images/family/son-family.webp",
     note: "Spent quality time with my son and his family. It was a heartwarming experience filled with love and laughter.",
     questions: [
       {
@@ -102,7 +102,7 @@ const diaries = [
     id: "tet",
     title: "Red Envelopes",
     tag: "Event",
-    image: "/images/vietnam/Tet-holiday.jpg",
+    image: "images/vietnam/Tet-holiday.jpg",
     note: "Celebrated Lunar New Year, the Vietnamese New Year, with my family in Vietnam. The kids had a lot of fun and excitement to receive red envelopes.",
     questions: [
       {
@@ -126,7 +126,7 @@ const diaries = [
     id: "atlanta",
     title: "Baseball's Soul",
     tag: "Travel",
-    image: "/images/atlanta/ATL-Braves.jpeg",
+    image: "images/atlanta/ATL-Braves.jpeg",
     note: "I visited the battery and it was so much fun. I place is most crowded on the weekends with all the bars open.",
     questions: [
       {
@@ -150,7 +150,7 @@ const diaries = [
     id: "newYork-trip-1",
     title: "Tallest Lady",
     tag: "Travel",
-    image: "/images/new-york/Liberty.jpeg",
+    image: "images/new-york/Liberty.jpeg",
     note: "Visited the Statue of Liberty in New York.",
     questions: [
       {
@@ -174,7 +174,7 @@ const diaries = [
     id: "first-born",
     title: "Look who's here",
     tag: "Family",
-    image: "/images/family/first-born.jpeg",
+    image: "images/family/first-born.jpeg",
     note: "Our first child was born and we couldn't be more excited. The joy and love we feel is indescribable.",
     questions: [
       {
@@ -198,7 +198,7 @@ const diaries = [
     id: "canada-trip-1",
     title: "The North",
     tag: "Travel",
-    image: "/images/canada/CN-tower.jpg",
+    image: "images/canada/CN-tower.jpg",
     note: "Visited the CN Tower in Toronto, Canada.",
     questions: [
       {
@@ -222,7 +222,7 @@ const diaries = [
     id: "destin-trip-1",
     title: "Salty Taste",
     tag: "Travel",
-    image: "/images/destin/Rosemary-Beach1.jpeg",
+    image: "images/destin/Rosemary-Beach1.jpeg",
     note: "Enjoyed the beautiful beaches of Destin, Florida.",
     questions: [
       {
@@ -246,7 +246,7 @@ const diaries = [
     id: "wedding",
     title: "White Day",
     tag: "Event",
-    image: "/images/wedding/download.jpg",
+    image: "images/wedding/download.jpg",
     note: "My oldest daughter's wedding day. She is a beautiful woman and I am so proud of her. It was a beautiful ceremony filled with love and joy.",
     questions: [
       {
@@ -270,7 +270,7 @@ const diaries = [
     id: "birthday",
     title: "Another Year Older",
     tag: "Event",
-    image: "/images/birthday/birthday.jpg",
+    image: "images/birthday/birthday.jpg",
     note: "Celebrated my birthday with family and friends. It was a wonderful day filled with love and laughter.",
     questions: [
       {
@@ -294,7 +294,7 @@ const diaries = [
     id: "puppy",
     title: "Little Ones",
     tag: "Family",
-    image: "/images/family/puppy.jpeg",
+    image: "images/family/puppy.jpeg",
     note: "Buddy gets to go outside to hang out with our family and his friends. He is a playful and adorable puppy who brings joy to our lives.",
     questions: [
       {
@@ -318,7 +318,7 @@ const diaries = [
     id: "location1",
     title: "Buzz Buzz",
     tag: "Travel",
-    image: "/images/atlanta/GT.jpg",
+    image: "images/atlanta/GT.jpg",
     note: "I the most wonderful time during my collefe years at Georgia Tech. I made lifelong friends and had unforgettable experiences.",
     questions: [
       {
@@ -342,7 +342,7 @@ const diaries = [
     id: "grandpa-birthday",
     title: "About to enter Relax Era",
     tag: "Family",
-    image: "/images/birthday/grandpa-birthday.jpeg",
+    image: "images/birthday/grandpa-birthday.jpeg",
     note: "Grandpa's 67th birthday!!! The family get to be together for the weekend and we had so much fun. We are happy that he's still healthy and full of energy.",
     questions: [
       {
@@ -366,7 +366,7 @@ const diaries = [
     id: "retirement",
     title: "Retirement Celebration",
     tag: "Event",
-    image: "/images/career/retirement.jpg",
+    image: "images/career/retirement.jpg",
     note: "My husband retirement party with his colleagues. It was a joyous occasion filled with memories and gratitude.",
     questions: [
       {
@@ -390,7 +390,7 @@ const diaries = [
     id: "wedding1",
     title: "Garden Wedding",
     tag: "Event",
-    image: "/images/wedding/wedding1.jpeg",
+    image: "images/wedding/wedding1.jpeg",
     note: "Attended a beautiful garden wedding of my grandson. The setting was picturesque and the atmosphere was filled with love and happiness.",
     questions: [
       {
@@ -414,7 +414,7 @@ const diaries = [
     id: "mountain",
     title: "Loss in Nature",
     tag: "Travel",
-    image: "/images/atlanta/Blairsville.jpeg",
+    image: "images/atlanta/Blairsville.jpeg",
     note: "Went on a trip with my friends and we found this place as a random spot in Blairsville, Georgia. It was a peaceful and reflective time surrounded by nature.",
     questions: [
       {
@@ -438,7 +438,7 @@ const diaries = [
     id: "christmas",
     title: "Holiday Cheer",
     tag: "Event",
-    image: "/images/christmas/christmas.jpg",
+    image: "images/christmas/christmas.jpg",
     note: "Celebrated Christmas with family. It was a magical day filled with joy and togetherness.",
     questions: [
       {
@@ -462,7 +462,7 @@ const diaries = [
     id: "paris",
     title: "City of Love",
     tag: "Travel",
-    image: "/images/paris/paris.webp",
+    image: "images/paris/paris.webp",
     note: "Visited Paris, the city of love, with my partner. We had a romantic and unforgettable experience exploring the city's iconic landmarks and charming streets.",
     questions: [
       {
@@ -486,7 +486,7 @@ const diaries = [
     id: "honeymoon",
     title: "Honeymoon Bliss",
     tag: "Travel",
-    image: "/images/maldives/honeymoon.webp",
+    image: "images/maldives/honeymoon.webp",
     note: "Had a blissful honeymoon in the Maldives. The crystal-clear waters and luxurious resorts made it a truly unforgettable experience.",
     questions: [
       {
