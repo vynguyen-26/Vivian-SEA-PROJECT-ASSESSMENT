@@ -102,7 +102,7 @@ const diaries = [
     id: "tet",
     title: "Red Envelopes",
     tag: "Event",
-    image: "images/vietnam/Tet-holiday.jpg",
+    image: "images/vietnam/tet-holiday.jpg",
     note: "Celebrated Lunar New Year, the Vietnamese New Year, with my family in Vietnam. The kids had a lot of fun and excitement to receive red envelopes.",
     questions: [
       {
