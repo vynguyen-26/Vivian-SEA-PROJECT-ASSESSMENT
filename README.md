@@ -4,7 +4,7 @@ Welcome to My Memory Diary, a site that will take you down through all your diff
 
 This project was created as a part of the Snap Engineering Academy Stage 2 and was built using vanilla HTML, CSS, and JavaScript.
 
-<img height="300" alt="Screenshot of catalog" src="./images/my-memory-diary.png">
+<img src="./images/my-memory-diary.png" alt="Screenshot of catalog" style="width: 100%">
 
 ---
 
@@ -15,8 +15,8 @@ This project was created as a part of the Snap Engineering Academy Stage 2 and w
 - **Quiz:** Quiz questions for each memory are personally related to that memory.
 -**Quiz Status Badge:** Let the user know whether they have successfully passed the quiz or need to retry. Avoid redo the completed card.
 - **Note:** Each memory card will have a note that the user wrote before. To unlock the note for a memory, users must answer all questions about that memory correctly. They can also edit or delete a note. 
-**Completed Memories:** A completed memory can be reopened without retaking the quiz during the current session.
-**Responsive Design:** Looks great across desktop, tablet, and mobile devices.
+- **Completed Memories:** A completed memory can be reopened without retaking the quiz during the current session.
+- **Responsive Design:** Looks great across desktop, tablet, and mobile devices.
 
 ---
 
